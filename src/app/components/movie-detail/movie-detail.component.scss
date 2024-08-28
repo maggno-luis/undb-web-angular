@@ -1,0 +1,90 @@
+.movie-details {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #f9f9f9;
+  
+    .movie-header {
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 20px;
+  
+      @media (max-width: 700px) {
+        flex-direction: column;
+        align-items: center;
+      }
+  
+      .movie-poster {
+        width: 400px;
+        height: 500px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-right: 20px;
+  
+        @media (max-width: 700px) {
+          width: 100%;
+          max-width: 300px;
+          height: auto;
+          margin-right: 0;
+          margin-bottom: 20px;
+        }
+      }
+  
+      .movie-info {
+        max-width: 800px;
+  
+        h1 {
+          font-size: 2em;
+          margin-bottom: 10px;
+        }
+  
+        .tagline {
+          font-style: italic;
+          margin-bottom: 10px;
+        }
+  
+        .overview {
+          margin-bottom: 10px;
+        }
+  
+        .release-date, .runtime, .budget, .revenue, .rating {
+          margin-bottom: 5px;
+          font-weight: 500;
+        }
+  
+        a {
+          color: #007bff;
+          text-decoration: none;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+  
+        @media (max-width: 700px) {
+          text-align: center;
+        }
+      }
+    }
+  
+    .movie-genres {
+      h3 {
+        margin-bottom: 10px;
+      }
+  
+      ul {
+        list-style: none;
+        padding: 0;
+  
+        li {
+          background-color: #e9ecef;
+          padding: 10px;
+          border-radius: 5px;
+          margin-bottom: 5px;
+          max-width: 350px;
+          font-weight: 500;
+          text-align: center;
+        }
+      }
+    }
+  }
+  

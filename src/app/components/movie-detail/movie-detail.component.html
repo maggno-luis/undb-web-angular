@@ -1,0 +1,23 @@
+<div class="movie-details">
+    <div class="movie-header">
+      <img [src]="'https://image.tmdb.org/t/p/original' + movie.poster_path" alt="{{ movie.title }}" class="movie-poster">
+      <div class="movie-info">
+        <h1>{{ movie?.title }}</h1>
+        <p class="tagline">{{ movie.tagline }}</p>
+        <p class="overview">{{ movie.overview }}</p>
+        <p class="release-date">Data de Lançamento: {{ movie?.release_date  | date }}</p>
+        <p class="runtime">Tempo de Filme: {{ movie.runtime }} minutes</p>
+        <p class="budget">Orçamento: ${{ movie.budget.toLocaleString() }}</p>
+        <p class="revenue">Bilheteira: ${{ movie.revenue.toLocaleString() }}</p>
+        <p class="rating">Classificação: {{ movie.vote_average }} / 10 ({{ movie.vote_count }} votes)</p>
+        <a [href]="movie.homepage" target="_blank">Mais Informações</a>
+      </div>
+    </div>
+    <div class="movie-genres">
+      <h3>Gêneros</h3>
+      <ul>
+        <li *ngFor="let genre of movie.genres">{{ genre.name }}</li>
+      </ul>
+    </div>
+</div>
+  

@@ -1,0 +1,23 @@
+<app-navbar></app-navbar>
+
+<main>
+  <section>
+    <h2>Buscar Filmes</h2>
+
+    <app-search-input
+      (searchResults)="handleSearchResults($event)"
+    ></app-search-input>
+  </section>
+
+  <div class="card-container">
+    <app-movie-card
+      *ngFor="let movie of movies"
+      [id]="movie.id"
+      [imageUrl]="'https://image.tmdb.org/t/p/w500' + movie.poster_path"
+      [title]="movie.title"
+      [description]="movie.overview"
+      [rating]="movie.vote_average"
+    >
+    </app-movie-card>
+  </div>
+</main>

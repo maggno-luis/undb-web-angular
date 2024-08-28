@@ -1,0 +1,16 @@
+<div class="card-container">
+    <div *ngFor="let movie of movies" class="card" (click)="goToDetails(movie.id)">
+        <img [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path" alt="{{ movie.title }}" />
+        <div class="card-body">
+          <h5 class="card-title">{{ movie.title }}</h5>
+          <p class="card-text">{{ (movie.overview) }}</p>
+          <app-rating [rating]="movie.vote_average"></app-rating>
+        </div>
+      </div>
+    </div>
+
+  <div class="pagination">
+    <button (click)="previousPage()" [disabled]="currentPage === 1">Anterior</button>
+    <span>Página {{ currentPage }} de {{ totalPages }}</span>
+    <button (click)="nextPage()" [disabled]="currentPage === totalPages">Próxima</button>
+</div>

@@ -1,0 +1,7 @@
+<div class="rating">
+  <div
+    class="progress-bar"
+    [ngStyle]="{ width: rating * 10 + '%', 'background-color': getBarColor() }"
+  ></div>
+  <span class="rating-text">{{ rating.toFixed(1) }}/10</span>
+</div>
